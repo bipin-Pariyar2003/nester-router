@@ -23,6 +23,7 @@ const Home = () => {
           demonstrates how to use React Router to create a Single Page
           Application (SPA).
         </p>
+        <p>Hello Ma chai Bipin haii</p>
       </div>
       <div>
         <p>Click the button below to see Reports</p>
