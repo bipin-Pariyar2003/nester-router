@@ -2,6 +2,7 @@ import React from "react";
 import Calculate from "../../../Components/Calculate";
 import { Button } from "@mui/material";
 import { useNavigate, useLocation } from "react-router-dom";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 const Overall = () => {
   const navigate = useNavigate();
@@ -23,7 +24,8 @@ const Overall = () => {
               marginTop: "0px",
             }}
           >
-            <Button variant="contained" onClick={handleGoBack}>
+            <Button onClick={handleGoBack}>
+              <ArrowBackIosIcon />
               Go Back
             </Button>
           </div>

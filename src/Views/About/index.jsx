@@ -24,20 +24,22 @@ const About = () => {
   return (
     <>
       <Header />
-      <h1>
-        <span className="heading">About Page</span>
-      </h1>
-      <p>
-        This project shows the data of the staffs.
-        <br />
-        <br />
-        The data is shown in the form of a report.
-        <br />
-        <br />
-        The report is divided into three parts:
-        <br />
-        <br />
-      </p>
+      <div style={{ textAlign: "center" }}>
+        <h1>
+          <span className="heading">About Page</span>
+        </h1>
+        <p style={{ fontSize: "20px" }}>
+          <li>This project shows the data of the staffs.</li>
+          <br />
+          <br />
+          <li>The data is shown in the form of a report.</li>
+          <br />
+          <br />
+          <li>The report is divided into three parts:</li>
+          <br />
+          <br />
+        </p>
+      </div>
       <div style={{ textAlign: "center" }}>
         <Button onClick={handleName}>1. Name Report</Button>
       </div>

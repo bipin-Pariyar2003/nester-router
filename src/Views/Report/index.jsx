@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
 import { useNavigate, useLocation, Outlet } from "react-router-dom";
-
+import LinkIcon from "@mui/icons-material/Link";
 const Report = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -25,9 +25,12 @@ const Report = () => {
       <Header />
       {location.pathname === "/report" ? (
         <>
-          <h1>
-            <span className="heading">Report Page</span>
-          </h1>
+          <div style={{ textAlign: "center" }}>
+            <h1>
+              <span className="heading">Report Page</span>
+            </h1>
+          </div>
+
           <div
             style={{
               display: "flex",
@@ -43,16 +46,28 @@ const Report = () => {
                 maxWidth: 345,
                 margin: "20px auto",
                 textAlign: "center",
+                backgroundColor: "#C4D9FF",
               }}
             >
               <CardContent>
-                <Typography variant="h5" component="div">
+                <Typography
+                  variant="h5"
+                  component="div"
+                  sx={{ marginTop: "10px", color: "#345187" }}
+                >
                   Click to see Report according to Staff Name
                 </Typography>
                 <Button
-                  variant="contained"
+                  variant="outlined"
                   onClick={handleName}
                   style={{ marginTop: "10px" }}
+                  sx={{
+                    backgroundColor: "#345187",
+                    color: "white",
+                    padding: "10px",
+                    paddingLeft: "20px",
+                    paddingRight: "20px",
+                  }}
                 >
                   Name Report
                 </Button>
@@ -65,17 +80,31 @@ const Report = () => {
                 maxWidth: 345,
                 margin: "20px auto",
                 textAlign: "center",
+                backgroundColor: "#C4D9FF",
               }}
             >
               <CardContent>
-                <Typography variant="h5" component="div">
+                <Typography
+                  variant="h5"
+                  component="div"
+                  sx={{ marginTop: "10px", color: "#345187" }}
+                >
                   Click to see Report according to Staff Name and Date
                 </Typography>
                 <Button
-                  variant="contained"
+                  // variant="contained"
+                  // color="success"
                   onClick={handleNameDate}
                   style={{ marginTop: "10px" }}
+                  sx={{
+                    backgroundColor: "#345187",
+                    color: "white",
+                    padding: "10px",
+                    paddingLeft: "20px",
+                    paddingRight: "20px",
+                  }}
                 >
+                  {/* <LinkIcon />  */}
                   Name Date Report
                 </Button>
               </CardContent>
@@ -87,16 +116,34 @@ const Report = () => {
                 maxWidth: 345,
                 margin: "20px auto",
                 textAlign: "center",
+                backgroundColor: "#C4D9FF",
               }}
             >
               <CardContent>
-                <Typography variant="h5" component="div">
+                <Typography
+                  variant="h5"
+                  component="div"
+                  sx={{
+                    marginTop: "10px",
+                    color: "#345187",
+                    padding: "10px",
+                    paddingLeft: "20px",
+                    paddingRight: "20px",
+                  }}
+                >
                   Click to see Overall Report
                 </Typography>
                 <Button
-                  variant="contained"
+                  // variant="contained"
                   onClick={handleOverall}
                   style={{ marginTop: "10px" }}
+                  sx={{
+                    backgroundColor: "#345187",
+                    color: "white",
+                    padding: "10px",
+                    paddingLeft: "20px",
+                    paddingRight: "20px",
+                  }}
                 >
                   Overall Report
                 </Button>

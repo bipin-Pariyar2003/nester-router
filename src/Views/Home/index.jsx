@@ -12,24 +12,41 @@ const Home = () => {
   return (
     <>
       <Header />
-      <div>
+      <div style={{ textAlign: "center" }}>
         <h1>
           <span className="heading">Home Page</span>
         </h1>
       </div>
-      <div>
+      <div style={{ textAlign: "center" }}>
         <p>
           Welcome to the Home Page. This is a simple React application that
           demonstrates how to use React Router to create a Single Page
           Application (SPA).
         </p>
-        <p>Hello Ma chai Bipin haii</p>
       </div>
-      <div>
+      <div
+        style={{ textAlign: "center", marginTop: "20px", marginBottom: "20px" }}
+      >
         <p>Click the button below to see Reports</p>
       </div>
-      <div style={{ textAlign: "center" }}>
-        <Button onClick={handleReport}>Reports</Button>
+      <div
+        style={{
+          textAlign: "center",
+        }}
+      >
+        <Button
+          variant="outlined"
+          onClick={handleReport}
+          sx={{
+            backgroundColor: "#345187",
+            color: "white",
+            padding: "10px",
+            paddingLeft: "20px",
+            paddingRight: "20px",
+          }}
+        >
+          Reports
+        </Button>
       </div>
     </>
   );

@@ -13,7 +13,14 @@ import RNepaliDatePicker from "../../../Components/RNepaliDatePicker/index";
 import { ad2bsHandler, bs2adHandler } from "../../../utils";
 import { useName } from "../../../context/NameContext";
 import { useState } from "react";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
+/**
+ * Page to display data according to Name and Date.
+ * @returns A component that renders a page with a name selection dropdown,
+ * a date selection using both English and Nepali date pickers, and displays
+ * all the data entries that match the selected name and date.
+ */
 export default function NameDate() {
   const navigate = useNavigate();
   // const { selectedName, setSelectedName, nameSet } = useName();  it syncs the name change in nameDate and namereport so
@@ -63,11 +70,15 @@ export default function NameDate() {
 
   return (
     <>
-      <h1>
-        <span className="heading">See data according to Name and Date</span>
-      </h1>
+      <div style={{ textAlign: "center" }}>
+        <h1>
+          <span className="heading">See data according to Name and Date</span>
+        </h1>
+      </div>
+
       <div style={{ textAlign: "left", marginTop: "20px" }}>
-        <Button variant="contained" onClick={handleGoBack}>
+        <Button onClick={handleGoBack}>
+          <ArrowBackIosIcon />
           Go Back
         </Button>
       </div>
@@ -134,36 +145,108 @@ export default function NameDate() {
       <hr />
       <div>
         {filteredEntries.length > 0 ? (
-          <ul>
-            {filteredEntries.map((entry, index) => (
-              <div
-                key={index}
-                style={{
-                  padding: "10px",
-                  margin: "10px",
-                  fontSize: "1.5rem",
-                  marginLeft: "15%",
-                  listStyleType: "none",
-                }}
-              >
-                <React.Fragment key={index}>
-                  <li>
-                    <b>Staff Id: {entry.staffID}</b>
-                  </li>
-                  <li>
-                    <b>Name: {entry.staffName}</b>
-                  </li>
-                  <li>
-                    <b>In/Out Type: {entry.inOutType}</b>
-                  </li>
-                  <li>
-                    <b>Time: {entry.time}</b>
-                  </li>
-                </React.Fragment>
-                <hr />
-              </div>
-            ))}
-          </ul>
+          <table style={{ width: "100%", borderCollapse: "collapse" }}>
+            <thead
+              style={{
+                fontSize: "20px",
+                backgroundColor: "#C5BAFF",
+                margin: "30px",
+              }}
+            >
+              <tr>
+                <th
+                  style={{
+                    border: "1px solid black",
+                    textAlign: "center",
+                    fontSize: "20px",
+                    padding: "10px",
+                  }}
+                >
+                  Staff ID
+                </th>
+                <th
+                  style={{
+                    border: "1px solid black",
+                    textAlign: "center",
+                    fontSize: "20px",
+                    padding: "10px",
+                  }}
+                >
+                  Name
+                </th>
+                <th
+                  style={{
+                    border: "1px solid black",
+                    textAlign: "center",
+                    fontSize: "20px",
+                    padding: "10px",
+                  }}
+                >
+                  In/Out Type
+                </th>
+                <th
+                  style={{
+                    border: "1px solid black",
+                    textAlign: "center",
+                    fontSize: "20px",
+                    padding: "10px",
+                  }}
+                >
+                  Time
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredEntries.map((entry, index) => (
+                <tr key={index}>
+                  <td
+                    style={{
+                      border: "1px solid black",
+                      textAlign: "right",
+                      padding: "7px",
+                      paddingRight: "10px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {entry.staffID}
+                  </td>
+                  <td
+                    style={{
+                      border: "1px solid black",
+                      textAlign: "right",
+                      padding: "7px",
+                      paddingRight: "10px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {entry.staffName}
+                  </td>
+                  <td
+                    style={{
+                      border: "1px solid black",
+                      textAlign: "right",
+                      padding: "7px",
+                      paddingRight: "10px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {entry.inOutType}
+                  </td>
+                  <td
+                    style={{
+                      border: "1px solid black",
+                      textAlign: "right",
+                      padding: "7px",
+                      paddingRight: "10px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {entry.time}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         ) : (
           <p style={{ textAlign: "center" }}>No data available</p>
         )}

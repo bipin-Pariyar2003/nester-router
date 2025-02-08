@@ -17,8 +17,22 @@ export default function Header() {
   const location = useLocation();
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+    <Box
+      sx={{
+        width: "100%",
+        // backgroundColor: "#FFF2F2",
+        backgroundColor: "#C4D9FF",
+        color: "white",
+      }}
+    >
+      <Box
+        sx={{
+          borderBottom: 1,
+          borderColor: "divider",
+          width: "100%",
+          padding: "5px",
+        }}
+      >
         <Tabs
           value={(() => {
             if (location.pathname === "/home") return 0;

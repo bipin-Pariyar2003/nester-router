@@ -115,17 +115,19 @@ const Calculate = () => {
         <thead>
           <tr
             style={{
-              backgroundColor: "#f8f9fa",
+              // backgroundColor: "#f8f9fa",
+              backgroundColor: "#C5BAFF",
+
               borderBottom: "2px solid #dee2e6",
             }}
           >
-            <th style={{ padding: "12px 15px", textAlign: "left" }}>
+            <th style={{ padding: "12px 15px", textAlign: "center" }}>
               Staff ID
             </th>
-            <th style={{ padding: "12px 15px", textAlign: "left" }}>
+            <th style={{ padding: "12px 15px", textAlign: "center" }}>
               Staff Name
             </th>
-            <th style={{ padding: "12px 15px", textAlign: "left" }}>
+            <th style={{ padding: "12px 15px", textAlign: "center" }}>
               Total Worked Time
             </th>
           </tr>
@@ -142,13 +144,13 @@ const Calculate = () => {
                 },
               }}
             >
-              <td style={{ padding: "12px 15px", textAlign: "left" }}>
+              <td style={{ padding: "12px 15px", textAlign: "right" }}>
                 {entry.staffID}
               </td>
-              <td style={{ padding: "12px 15px", textAlign: "left" }}>
+              <td style={{ padding: "12px 15px", textAlign: "right" }}>
                 {entry.staffName}
               </td>
-              <td style={{ padding: "12px 15px", textAlign: "left" }}>
+              <td style={{ padding: "12px 15px", textAlign: "right" }}>
                 {entry.totalWorkedTime}
               </td>
             </tr>

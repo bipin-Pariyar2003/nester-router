@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import database from "../../../assets/data";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+
 import { useName } from "../../../context/NameContext";
 
 const NameReport = () => {
@@ -50,16 +52,15 @@ const NameReport = () => {
   }, {});
 
   return (
-    <div>
-      <h1>
-        <span className="heading">See data according to Name</span>
-      </h1>
-      <Button
-        variant="contained"
-        onClick={() => navigate(-1)}
-        style={{ margin: "20px" }}
-      >
-        Back
+    <>
+      <div style={{ textAlign: "center" }}>
+        <h1>
+          <span className="heading">See data according to Name</span>
+        </h1>
+      </div>
+      <Button onClick={() => navigate(-1)} style={{ margin: "20px" }}>
+        <ArrowBackIosIcon />
+        Go Back
       </Button>
       <div style={{ margin: "20px auto", width: "300px" }}>
         <select
@@ -85,36 +86,98 @@ const NameReport = () => {
       {selectedName && Object.keys(entriesByDate).length > 0 ? (
         <div>
           {Object.keys(entriesByDate).map((date) => (
-            <div
-              key={date}
-              style={{
-                padding: "10px",
-                margin: "10px",
-                fontSize: "1.5rem",
-                marginLeft: "15%",
-                listStyleType: "none",
-              }}
-            >
-              <h3>Date: {date}</h3>
-              <ul>
-                {entriesByDate[date].map((entry, index) => (
-                  <React.Fragment key={index}>
-                    <li>
-                      <b>ID: {entry.staffID}</b>
-                    </li>
-                    <li>
-                      <b>Name: {entry.staffName}</b>
-                    </li>
-                    <li>
-                      <b>In/Out Type: {entry.inOutType}</b>
-                    </li>
-                    <li>
-                      <b>Time: {entry.time}</b>
-                    </li>
-                    <hr />
-                  </React.Fragment>
-                ))}
-              </ul>
+            <div key={date} style={{ margin: "10px" }}>
+              <h3 style={{ textAlign: "center", textDecoration: "underline" }}>
+                Date: {date}
+              </h3>
+              <table style={{ width: "100%", borderCollapse: "collapse" }}>
+                <thead style={{ fontSize: "20px", backgroundColor: "#C5BAFF" }}>
+                  <tr>
+                    <th
+                      style={{
+                        border: "1px solid black",
+                        textAlign: "center",
+                        fontSize: "20px",
+                      }}
+                    >
+                      ID
+                    </th>
+                    <th
+                      style={{
+                        border: "1px solid black",
+                        textAlign: "center",
+                        fontSize: "20px",
+                      }}
+                    >
+                      Name
+                    </th>
+                    <th
+                      style={{
+                        border: "1px solid black",
+                        textAlign: "center",
+                        fontSize: "20px",
+                      }}
+                    >
+                      In/Out Type
+                    </th>
+                    <th
+                      style={{
+                        border: "1px solid black",
+                        textAlign: "center",
+                        fontSize: "20px",
+                      }}
+                    >
+                      Time
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {entriesByDate[date].map((entry, index) => (
+                    <tr key={index}>
+                      <td
+                        style={{
+                          border: "1px solid black",
+                          textAlign: "right",
+                          paddingRight: "10px",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        {entry.staffID}
+                      </td>
+                      <td
+                        style={{
+                          border: "1px solid black",
+                          textAlign: "right",
+                          paddingRight: "10px",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        {entry.staffName}
+                      </td>
+                      <td
+                        style={{
+                          border: "1px solid black",
+                          textAlign: "right",
+                          paddingRight: "10px",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        {entry.inOutType}
+                      </td>
+                      <td
+                        style={{
+                          border: "1px solid black",
+                          textAlign: "right",
+                          paddingRight: "10px",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        {entry.time}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           ))}
         </div>
@@ -123,7 +186,7 @@ const NameReport = () => {
           <b style={{ fontSize: "1.5rem" }}>Select a name to see report</b>
         </p>
       )}
-    </div>
+    </>
   );
 };
 

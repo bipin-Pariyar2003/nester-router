@@ -5,6 +5,17 @@
   /* text-align: center; */
 }
 
+:root {
+  /* background-color: #16404d;  */
+  background-color: #e8f9ff;
+  /* color: #fbf5dd; */
+  color: #345187;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
