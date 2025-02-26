@@ -7,8 +7,9 @@
 
 :root {
   /* background-color: #16404d;  */
-  background-color: #e8f9ff;
-  /* color: #fbf5dd; */
+  --mui-palette-primary-main: black;
+  /* background-color: #e8f9ff; */
+  --mui-palette-primary-main: cyan;
   color: #345187;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
